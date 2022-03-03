@@ -1,19 +1,14 @@
-class TaskDecider():
-    
-    def __init__(self, task_1, task_2):
-        self.task_1 = task_1
-        self.task_2 = task_2
-        self.wash_dishes = "Wash dishes"
-        self.cook_dinner = "Cook Dinner"
-        self.clean_windows = "Clean Windows"
+from . import tasks
 
-    def get_preferred_option(self):
-        task_list = [self.task_1, self.task_2]
-        if self.wash_dishes and self.cook_dinner in task_list:
-            return self.wash_dishes
-        elif self.cook_dinner and self.clean_windows in task_list:
-            return self.cook_dinner
-        else:
-            return self.clean_windows
-                
-        
+wash_dishes = "Wash Dishes"
+cook_dinner = "Cook Dinner"
+clean_windows = "Clean Windows"
+
+def get_preferred_option(task_1, task_2):
+    task_list = [task_1, task_2]
+    if task_1.description == wash_dishes  and task_2.description == cook_dinner in task_list:
+        return wash_dishes
+    # elif cook_dinner and clean_windows in task_list:
+        # return cook_dinner
+    # else:
+        # return clean_windows
